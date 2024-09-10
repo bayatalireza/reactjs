@@ -1,0 +1,16 @@
+.modal-backdrop {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.45);
+}
+
+.modal {
+    background-color: rgb(203, 208, 214);
+    border-radius: 10px;
+    padding: 30px;
+    margin: 250px auto;
+    max-width: 480px;
+}

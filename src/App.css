@@ -1,4 +1,7 @@
-.App {
+.app {
   text-align: center;
 }
 
+button {
+  margin-top: 20px;
+}

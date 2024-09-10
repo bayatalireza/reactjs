@@ -1,0 +1,11 @@
+.new-event-form label,
+.new-event-form input {
+    display: block;
+    text-align: left;
+    width: 95%;
+    margin: 6px auto;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    border-radius: 4px;
+}
