@@ -16,6 +16,7 @@ function EventList(props) {
             <h1 className="h1">
               {index + 1} - {event.title}
             </h1>
+            <h2>Genre: {event.genre} - Date: {event.date}</h2>
             <button onClick={() => {return (props.handleDelete(event.id))}}>Delete</button>
           </div>
         );

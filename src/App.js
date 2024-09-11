@@ -24,18 +24,22 @@ function App() {
   };
   //handleDelete for delete items
   const handleDelete = (id) => {
-    return(
-      
-      setEvents((pervEvents) => {
-      console.log(id)
+    return setEvents((pervEvents) => {
       return pervEvents.filter((event) => {
         return id !== event.id;
       });
-    })
-  )};
+    });
+  };
 
   const handleShowClick = () => {
     return setShowEvents(false);
+  };
+
+  const addMovie = (event) => {
+    setEvents((pervEvents) => {
+      return [...pervEvents, event];
+    });
+    setShowModal(false);
   };
 
   const titr = "HOLLYWOOD";
@@ -43,7 +47,7 @@ function App() {
 
   return (
     <div className="app">
-      <Title titr={titr} titrDate={titrDate} onClick={handleDelete}/>
+      <Title titr={titr} titrDate={titrDate} onClick={handleDelete} />
 
       {!showEvents && (
         <div>
@@ -52,7 +56,11 @@ function App() {
       )}
 
       {showEvents && (
-        <EventList events={events} handleShowClick={handleShowClick} handleDelete={handleDelete} />
+        <EventList
+          events={events}
+          handleShowClick={handleShowClick}
+          handleDelete={handleDelete}
+        />
       )}
 
       <h2>{name}</h2>
@@ -63,7 +71,7 @@ function App() {
       <br />
       {showModal && (
         <Modal>
-          <NewMovieForm />
+          <NewMovieForm addMovie={addMovie} />
         </Modal>
       )}
 
