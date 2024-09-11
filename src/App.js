@@ -2,7 +2,7 @@ import "./App.css";
 import Title from "./components/Title/title";
 import Modal from "./components/Modal/modal";
 import EventList from "./components/EventList/eventList";
-import { useState, Fragment } from "react";
+import { useState } from "react";
 import NewMovieForm from "./components/NewMovieForm/newMovieForm";
 
 function App() {
@@ -24,15 +24,18 @@ function App() {
   };
   //handleDelete for delete items
   const handleDelete = (id) => {
-    setEvents((perEvents) => {
-      return perEvents.filter((event) => {
+    return(
+      
+      setEvents((pervEvents) => {
+      console.log(id)
+      return pervEvents.filter((event) => {
         return id !== event.id;
       });
-    });
-  };
+    })
+  )};
 
   const handleShowClick = () => {
-    return setShowEvents(true);
+    return setShowEvents(false);
   };
 
   const titr = "HOLLYWOOD";
@@ -40,7 +43,7 @@ function App() {
 
   return (
     <div className="app">
-      <Title titr={titr} titrDate={titrDate} />
+      <Title titr={titr} titrDate={titrDate} onClick={handleDelete}/>
 
       {!showEvents && (
         <div>
@@ -49,7 +52,7 @@ function App() {
       )}
 
       {showEvents && (
-        <EventList events={events} handleShowClick={handleShowClick} />
+        <EventList events={events} handleShowClick={handleShowClick} handleDelete={handleDelete} />
       )}
 
       <h2>{name}</h2>
