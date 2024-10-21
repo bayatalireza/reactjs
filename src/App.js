@@ -4,6 +4,7 @@ import Modal from "./components/Modal/modal";
 import EventList from "./components/EventList/eventList";
 import { useState } from "react";
 import NewMovieForm from "./components/NewMovieForm/newMovieForm";
+import TripList from "./components/TripList/TripList";
 
 function App() {
   const [name, setName] = useState("ALIREZA");
@@ -82,6 +83,7 @@ function App() {
       >
         Add New Movie
       </button>
+      <TripList />
     </div>
   );
 }
